@@ -173,3 +173,7 @@
 .movie-title {
   font-size: 1.1rem;
 }
+
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
