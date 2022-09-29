@@ -155,6 +155,7 @@
   margin-right: 10px;
   width: 100%;
   transition: transform 450ms;
+  cursor: pointer;
 }
 
 .row-poster:hover {
@@ -176,4 +177,11 @@
 
 .row-posters::-webkit-scrollbar {
   display: none;
+}
+
+.movie-trailer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
