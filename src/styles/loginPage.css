@@ -1,0 +1,23 @@
+.login {
+  position: relative;
+  height: 100%;
+}
+
+.login-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 125px;
+  cursor: pointer;
+  object-fit: contain;
+  padding-left: 20px;
+}
+
+.login-button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
