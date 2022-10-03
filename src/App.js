@@ -10,7 +10,7 @@ function App() {
     <div className="app">
       <Router>
         <Routes>
-          {user ? <Route path="/" element={<HomePage />} /> : <Route exact path="/login" element={<Login />} />}
+          {user ? <Route exact path="/" element={<HomePage />} /> : <Route exact path="/" element={<Login />} />}
         </Routes>
       </Router>
     </div>

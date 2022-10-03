@@ -1,6 +1,12 @@
+body {
+  width: 100%;
+}
 .login {
   position: relative;
   height: 100%;
+  width: 100%;
+  background: url('https://imgur.com/zVoNQwZ.png') center no-repeat;
+  background-size: cover;
 }
 
 .login-logo {
@@ -20,4 +26,72 @@
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+}
+
+.login-fade {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  /* background-image: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8) 0,
+    rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.8) 100%,
+
+  ); */
+}
+
+.login-body {
+  position: absolute;
+  top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 95%;
+}
+
+.login-h1 {
+  font-size: 2.25rem;
+  margin-bottom: 15px;
+}
+
+.login-h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.login-p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.login-input-email > input {
+  padding: 10px;
+  outline-width: 0;
+  height: 30px;
+  width: 30%;
+  border: none;
+  max-width: 600px;
+}
+
+.get-started {
+  padding: 10px;
+  height: 50px;
+  font-size: 0.91rem;
+  border: none;
+  color: white;
+  background-color: #e50914;
+  margin-top: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
