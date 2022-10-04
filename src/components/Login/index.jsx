@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/loginPage.css'
+import SignIn from './SignIn';
 
-function index() {
+function Login() {
+  const [signIn, setSignIn] = useState(false);
   return (
     <section className='login'>
       <div className='login-background'>
@@ -12,21 +14,21 @@ function index() {
         <div className='login-fade'></div>
 
         <div className='login-body'>
-          <>
-          <h1 className='login-h1'>Unlimited movies, TV shows, and more.</h1>
+          {signIn ? <SignIn />
+            : <>
+              <h1 className='login-h1'>Unlimited movies, TV shows, and more.</h1>
 
-          <h2 className='login-h2'>Watch anywhere. Cancel anytime.</h2>
+              <h2 className='login-h2'>Watch anywhere. Cancel anytime.</h2>
 
-          <p className='login-p'>Ready to watch? Enter you email to create or restart your membership.</p>
-          
-          <div className='login-input'>
-            <form className='login-input-email'>
-              <input type={'email'} placeholder='Email address'/>
-            <button className='get-started'>Get Started</button>
-            </form>
-          </div>
-          </>
+              <p className='login-p'>Ready to watch? Enter you email to create or restart your membership.</p>
 
+              <div className='login-input'>
+                <form className='login-input-email'>
+                  <input type={'email'} placeholder='Email address' />
+                  <button onClick={() => setSignIn(true)} className='get-started'>Get Started</button>
+                </form>
+              </div>
+            </>}
         </div>
 
       </div>
@@ -34,4 +36,4 @@ function index() {
   )
 }
 
-export default index;
+export default Login;
