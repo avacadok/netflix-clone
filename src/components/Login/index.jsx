@@ -8,9 +8,10 @@ function Login() {
     <section className='login'>
       <div className='login-background'>
         <img className='login-logo'
-          src='https://imgur.com/mcwxjvi.png' alt='login-background' />
+          src='https://imgur.com/mcwxjvi.png' alt='login-background' 
+          onClick={() => setSignIn(false)}/>
 
-        <button className='login-button'>Sign In</button>
+        <button className='login-button' onClick={() => setSignIn(true)}>Sign In</button>
         <div className='login-fade'></div>
 
         <div className='login-body'>
