@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 import Login from './components/Login';
+import Profile from './components/Profile';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { auth } from './firebase';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +11,7 @@ import { logout, login, selectUser } from './features/userSlice'
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  console.log('213231',user)
+  console.log('213231', user)
 
   useEffect(() => {
     const userLogin = auth.onAuthStateChanged(userAuth => {
@@ -23,18 +24,28 @@ function App() {
         }))
       } else {
         //loggd out
-        dispatch(logout)
+        dispatch(logout())
+        console.log("user logout")
       }
     })
 
-    return userLogin();
+    return userLogin;
   }, [])
   return (
     <div className="app">
       <Router>
-        <Routes>
-          {user ? <Route exact path="/" element={<HomePage />} /> : <Route exact path="/" element={<Login />} />}
-        </Routes>
+
+        {user ?
+          <Routes>
+            <Route exact path="/" element={<HomePage />} />
+            <Route path='/profile' element={<Profile />} />
+          </Routes>
+          :
+          <Routes>
+            <Route exact path="/" element={<Login />} />
+          </Routes>
+        }
+
       </Router>
     </div>
   );

@@ -26,11 +26,12 @@ body {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #fff;
   background-color: #e50914;
   border: none;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .login-fade {

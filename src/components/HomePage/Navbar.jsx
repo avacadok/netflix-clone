@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [show, setShow] = useState(false);
 
-//create function when to show navbar 
+  //create function when to show navbar 
   const transitionNav = () => {
     if (window.scrollY > 100) {
       setShow(true);
@@ -20,7 +21,9 @@ function Navbar() {
     <section className={`navbar ${show && 'navbar-black'}`}>
       <div className='nav-content'>
         <div>
-          <img src='https://imgur.com/mcwxjvi.png' alt='homepage-logo' className='nav-logo' /> 
+          <Link to={'/'}>
+            <img src='https://imgur.com/mcwxjvi.png' alt='homepage-logo' className='nav-logo' />
+          </Link>
           <div className='nav-titles'>
             <span className='home-title'>Home</span>
             <span className='home-title'>TV Shows</span>
@@ -29,8 +32,10 @@ function Navbar() {
             <span className='home-title'>My List</span>
           </div>
         </div>
-       
-        <img src='https://imgur.com/F9LQMzR.png' alt='homepage-avatar' className='nav-avatar' />
+
+        <Link to={'/profile'}>
+          <img src='https://imgur.com/F9LQMzR.png' alt='homepage-avatar' className='nav-avatar' />
+        </Link>
       </div>
 
     </section>

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { auth } from '../../firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
 
 function SignIn() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');
-  const [msg, setMsg] = useState('');
   const [signUp, setSignUp] = useState(false);
 
   const handleSignIn = (e) => {
@@ -32,11 +30,9 @@ function SignIn() {
         setPassword('');
         setErrMsg('');
         setName('');
-        setMsg(`Welcome to Netflix ${name}. Sign in to discover more.`)
       })
       .catch(err => {
         console.log("auth error123", err.code)
-        setMsg('')
         //setErrMsg(err.message)
         if (err.code == 'auth/invalid-email') {
           setErrMsg('Please enter a valid email address')
@@ -75,14 +71,14 @@ function SignIn() {
 
         <div>
           <span className='new-to'>New to Netflix?</span>
-          <span className='signup-link' onClick={() => { setSignUp(true); setErrMsg('') }}>Sign up now.</span>
+          <span className='signup-link' onClick={() => { setSignUp(true); setErrMsg(''); setEmail(''); setPassword('') }}>Sign up now.</span>
         </div>
       </form>
         :
         <form >
           <h1>Sign Up</h1>
           {errMsg ? <p className='errmsg'>{errMsg}</p> : <></>}
-          {msg ? <p className='signup-msg'>{msg}</p> : <></>}
+
           <input placeholder='Username'
             type={'name'}
             onChange={(e) => setName(e.target.value)}
@@ -105,7 +101,7 @@ function SignIn() {
 
           <div>
             <span className='new-to'>Have an account already?</span>
-            <span className='signup-link' onClick={() => { setSignUp(false); setErrMsg('') }}>Sign in now.</span>
+            <span className='signup-link' onClick={() => { setSignUp(false); setErrMsg(''); setEmail(''); setPassword(''); setName('') }}>Sign in now.</span>
           </div>
 
         </form>

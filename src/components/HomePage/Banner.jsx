@@ -13,7 +13,6 @@ function Banner() {
     }
     fetchData();
   }, [])
-  console.log(movie);
 
   const shortenDescription = (string, num) => {
     return string.length > num ? string.substr(0, num -1 ) + '...' : string
