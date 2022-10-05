@@ -14,7 +14,7 @@ function SignIn() {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password)
       .then((authUser) => {
-        console.log('user sign in successfully', authUser.user)
+        console.log('user sign in successfully', authUser)
       })
       .catch(err => {
         console.log("auth error", err)
@@ -27,7 +27,7 @@ function SignIn() {
 
     auth.createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
-        console.log('authUser', authUser.user)
+        console.log('authUser', authUser)
         setEmail('');
         setPassword('');
         setErrMsg('');
@@ -55,7 +55,6 @@ function SignIn() {
         }
       })
   }
-  console.log("23131", errMsg)
 
   return (
     <div className='signIn'>
