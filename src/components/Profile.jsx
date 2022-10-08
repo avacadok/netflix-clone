@@ -5,6 +5,7 @@ import { selectUser } from '../features/userSlice'
 import { useSelector } from 'react-redux';
 import { auth } from '../firebase';
 import { Link } from 'react-router-dom';
+import Plans from './Plan';
 
 function Profile() {
   const user = useSelector(selectUser)
@@ -21,6 +22,7 @@ function Profile() {
             <h2>{user.email}</h2>
             <div className='profile-plans'>
             <h3>Plans</h3>
+            <Plans/>
               <Link to={'/'}>
                 <button
                   className='profile-signout'
