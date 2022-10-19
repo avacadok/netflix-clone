@@ -9,6 +9,7 @@ function Plan() {
   const [products, setProducts] = useState([]);
   const user = useSelector(selectUser);
   const [subscription, setSubscription] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     db.collection('customers')
@@ -25,8 +26,6 @@ function Plan() {
         })
       })
   }, [user.uid])
-
-  console.log("sub", subscription)
 
   useEffect(() => {
     db.collection("products").where("active", "==", true)
@@ -76,17 +75,20 @@ function Plan() {
       {Object.entries(products).map(([productId, productData]) => {
         const currentPackage = productData.name.toLowerCase().includes(subscription?.role)
         return (
-          <div key={productId} 
-          className={` ${currentPackage && 'current-plan'} plan-detail`}>
+          <div key={productId}
+            className={` ${currentPackage && 'current-plan'} plan-detail`}>
             <div className='plan-info'>
               <h3>{productData.name}</h3>
               <p>{productData.description}</p>
             </div>
 
             <div>
-              <button onClick={() => !currentPackage && handleCheckout(productData.prices.priceId)}
-                className="plan-button">
-                {currentPackage ? 'Current Package' : 'Subscribe'}
+              <button 
+                onClick={() => !currentPackage && handleCheckout(productData.prices.priceId) && setLoading(true)}
+                className={` ${!currentPackage && loading &&'button-loading'} plan-button`}>
+
+                <span className="button-text">{currentPackage ? 'Current Package' : 'Subscribe'}</span>
+
               </button>
             </div>
           </div>
