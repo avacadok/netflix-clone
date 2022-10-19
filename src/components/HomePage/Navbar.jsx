@@ -25,7 +25,9 @@ function Navbar() {
             <img src='https://imgur.com/mcwxjvi.png' alt='homepage-logo' className='nav-logo' />
           </Link>
           <div className='nav-titles'>
-            <span className='home-title'>Home</span>
+            <Link className='home-title' to={'/'}>
+            Home
+            </Link>
             <span className='home-title'>TV Shows</span>
             <span className='home-title'>Movies</span>
             <span className='home-title'>New & Popular</span>
