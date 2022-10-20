@@ -1,4 +1,38 @@
-# Getting Started with Create React App and Redux
+# Netfilx Clone
+Application that is built with React, Redux, HTML, JS, CSS and Firebase to show movie trailer on Netflix Clone
+- Working in progress 👩🏻‍💻
+
+## Sneak Peek
+
+### HomePage
+!["home page"](https://github.com/avacadok/netflix-clone/blob/main/doc/homepage.png)
+
+### Landing Page
+!["landing page"](https://github.com/avacadok/netflix-clone/blob/main/doc/landing-page.png)
+
+### Sign In
+!["sign in"](https://github.com/avacadok/netflix-clone/blob/main/doc/signin-page.png)
+
+### Profile Page
+!["profile page"](https://github.com/avacadok/netflix-clone/blob/main/doc/profile-page.png)
+
+## Core Features
+
+- Register and login to an account
+- Checkout different genres of movies and shows that popular on Netflix
+- Change monthly subscription plan via Stripe
+- Click on movie poster and play movie trailer 
+
+## Work In Progree
+
+- Loading sign when click on button 
+- Display TV shows, Movies, New & Popular and My List on click for nav bar components 
+- Show play sign when hover on movie poster and close sign when movie trailer is clicked
+
+
+
+
+## Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
